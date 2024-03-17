@@ -46,11 +46,15 @@ const LineChart = ({ chartData }) => {
 }, [chartData]);
 
     return (
+
+        <div>
+        <h1 className='font-bold text-white text-base sm:text-lg lg:text-xl py-4'>TEMPERATURE FORECAST</h1>
+
         <div className=' flex w-full justify-center'>
             <div className='bg-white max-w-[350px] lg:w-full '>
             <Line data={data} />
             </div>
-        </div>
+        </div></div>
     );
 }
 

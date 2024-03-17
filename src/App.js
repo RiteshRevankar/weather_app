@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Weather from "./components/Weather";
 
 function App() {
   const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("belgaum");
   const [forecastdata, setForecastData] = useState({});
   const [errorDialog, setErrorDialog] = useState(false);
 
@@ -38,6 +38,12 @@ function App() {
   const closeErrorDialog = () => {
     setErrorDialog(false);
   };
+
+  useEffect(() => {
+
+    searchLocation();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className=" w-full bg-gradient-to-br p-2 lg:p-8 from-[#000b31] to-[#004a8c] ">

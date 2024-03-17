@@ -17,7 +17,7 @@ const Forecast = ({ chartData }) => {
 
   return (
     <div className='w-full lg:pl-4'>
-      <h1 className='font-bold text-white text-base sm:text-lg lg:text-xl p-2'>WEEKLY FORECAST</h1>
+      <h1 className='font-bold text-white text-base sm:text-lg lg:text-xl py-4 lg:py-2'>WEEKLY FORECAST</h1>
       {uniqueDays.map(day => {
         let forecastDataForDay = chartData.list.find(item => {
           const date = new Date(item.dt_txt);

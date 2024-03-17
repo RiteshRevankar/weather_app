@@ -23,19 +23,19 @@ const Weather = ({ weatherData, chartData }) => {
                               <div className='w-full flex flex-row items-center justify-around h-full'>
 
                                    <div className='flex flex-col'>
-                                   <h1 className='text-lg lg:text-2xl font-semibold '>
+                                   <h1 className='text-base sm:text-lg lg:text-xl font-semibold '>
                                     {weatherData.name}, {weatherData.sys.country}
                                       </h1>
-                                        <p className='text-base lg:text-xl'>
+                                        <p className='text-sm sm:text-base lg:text-lg'>
                                          {formattedDate}
                                       </p>
                                   </div>
 
                                   <div className='flex flex-col'>
-                                   <h1 className='text-lg lg:text-2xl font-semibold'>
+                                   <h1 className='text-base sm:text-lg lg:text-xl font-semibold'>
                                       {weatherData.main.temp.toFixed()} °C
                                   </h1>
-                                   <p className='text-base lg:text-xl'>
+                                   <p className='text-sm sm:text-base lg:text-lg'>
                                   {weatherData.weather[0].description}
                                       </p></div>
 
@@ -64,14 +64,14 @@ const Weather = ({ weatherData, chartData }) => {
                                <h1 className='font-bold text-white text-base sm:text-lg lg:text-xl py-4 lg:py-2'>
                                      AIR CONDITIONS
                                   </h1>
-                              <div className='flex flex-col lg:flex-row justify-between'>
-                                  <div className='flex justify-between'>
+                              <div className='flex flex-col lg:flex-row lg:justify-center'>
+                                  <div className='flex w-full justify-between'>
                                         <div className='w-1/2 p-2'>
                                      <div class='flex items-center justify-center'>
                                         <div class='w-7'>
                                             <img src="../assets/temp_icon.png" alt="temperature-icon" />
                                         </div>
-                                        <p class='text-base lg:text-lg pl-2'>Real Feel</p>
+                                        <p class='text-base lg:text-lg pl-1'>Real Feel</p>
                                     </div>
 
                                        <h1 className='text-lg lg:text-xl font-semibold'>
@@ -123,18 +123,15 @@ const Weather = ({ weatherData, chartData }) => {
                               </div>
                           </div>
 
-                          <div className=' w-full h-full p-2'>
+                          <section className=' w-full h-full px-2 py-4 lg:py-2 '>
                         <LineChart chartData={chartData}/>
-                          </div>
+                          </section>
                       </div>
                   </div>
 
-                  <div className="w-full lg:w-1/2 h-full flex justify-center items-center ">
-
-
- <Forecast chartData={chartData}/>
-
-                  </div>
+                  <section className="w-full lg:w-1/2 h-full flex justify-center items-center py-4 lg:py-0">
+                        <Forecast chartData={chartData}/>
+                  </section>
               </div>
       ): null}
       </div>
